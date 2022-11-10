@@ -1,4 +1,4 @@
-package PracticeAPI;
+package NegativeTestCaseAPI;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
@@ -6,15 +6,9 @@ import static io.restassured.RestAssured.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetAndPostExample<V> {
+public class PostExample<V> {
 	
-//	@Test
-//	public void testGet() {
-//		
-//		baseURI= "https://reqres.in/api";
-//		given().get("/users?page=2").then().statusCode(200);
-//		
-//	}
+
 		@Test
 		public void testPost() {
 			

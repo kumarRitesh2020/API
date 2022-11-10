@@ -33,7 +33,7 @@ public class AddProjectTest {
 		reqSpec.contentType(ContentType.JSON);
 		//actions
 		
-		//Response res=reqSpec.post("http://localhost:8084/addProject");
+		//Response res=reqSpec.post("http://rmgtestingserver:8084/addProject");
 		Response res=reqSpec.post("https://reqres.in/api/users");
 		
 		//validation

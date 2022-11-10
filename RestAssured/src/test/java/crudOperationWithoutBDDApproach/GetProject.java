@@ -1,5 +1,9 @@
 package crudOperationWithoutBDDApproach;
 
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.port;
+
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,19 +24,28 @@ public void getProjectTest() {
 		
 		//preconditions
 		
-		RequestSpecification reqSpec=RestAssured.given();
+		//RequestSpecification reqSpec=RestAssured.given();
 		
 		//actions
 		
 		//Response res=reqSpec.post("http://localhost:8084/addProject");
-		Response res=reqSpec.get("https://reqres.in/api/users/2");
+	//	Response res=reqSpec.get("https://reqres.in/api/users/2");
 		
-		//validation
-		int code=res.getStatusCode();
-		Assert.assertEquals(code, 200);
+		baseURI="http://reqres.in";
+		JSONObject jobj= new JSONObject();
+		
+		
+		//pre condition
+		
+		given().body(jobj).contentType(ContentType.JSON).when().get("http://reqres.in/api/users/2").then().statusCode(200).log().all();
+		
+		
 	}
+	
 
 }
+
+
 
 
 
